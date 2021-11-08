@@ -44,6 +44,10 @@ const Shop: FC = () => {
 
   }
 
+  const removeCart = () => {
+    setOrder([])
+  }
+
   const removeCatItem = (itemId : string) => {
     const newOrder = order.filter(item => item.id !== itemId)
     setOrder(newOrder)
@@ -71,7 +75,7 @@ const Shop: FC = () => {
     <div className='shop'>
       <ItemsList addToCart={addToCart} items={items}/>
       <Cart handleCartShow={handleCartShow} totalCount={totalCount} totalPrice={totalPrice}/>
-      { isCartShow && <CartList removeCatItem={removeCatItem} totalPrice={totalPrice} order={order}/> }
+      { isCartShow && <CartList removeCart={removeCart} removeCatItem={removeCatItem} handleCartShow={handleCartShow} totalPrice={totalPrice} order={order}/> }
     </div>
   )
 }

@@ -11,11 +11,13 @@ const CartItem: FC<CartItemProps> = ({orderItem, removeCatItem}) => {
   const {quantity, id, name, price} = orderItem
   const priceItem = quantity * price
   return (
-    <div id={id}>
+    <div className='cart-item' id={id}>
+      <div>
       <span>{name} : </span>
-      <span>{price} x</span>
-      <span>{quantity} = </span>
+      <span>{price} - </span>
+      <span>x{quantity} = </span>
       <span>{priceItem}</span>
+      </div>
       <button onClick={() => removeCatItem(id)}>x</button>
     </div>
   )

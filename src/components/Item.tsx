@@ -21,11 +21,13 @@ const Item: FC<ItemProps> = ({item, addToCart}) => {
   return (
     <div className='item' id={id}>
       <img src={full_background} alt="" />
-      <div>
-        <p>{name}</p>
+      <div className='item-box'>
+        <h4>{name}</h4>
         <p>{description}</p>
-        <p>{price}</p>
-        <button onClick={addCart}>Купить</button>
+        <div className='item-price'>
+          <button onClick={addCart}>Купить</button>
+          <p>{price} V</p>
+        </div>
       </div>
     </div>
   )

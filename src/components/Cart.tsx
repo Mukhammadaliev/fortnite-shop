@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import cartIcon from './cart.png'
 
 interface CartProps {
   totalCount: number;
@@ -9,6 +10,7 @@ interface CartProps {
 const Cart :FC<CartProps> = ({totalPrice, totalCount, handleCartShow,}) => {
   return (
     <div onClick={handleCartShow} className='cart'>
+      <img src={cartIcon} alt="" />
       <span>{totalPrice} V </span>|
       <span> {totalCount}</span>
     </div>
